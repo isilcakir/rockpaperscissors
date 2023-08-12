@@ -1,0 +1,40 @@
+import random
+round=int(input("How many rounds you wanna play?:"))
+score1=0
+score2=0
+for i in range(1,round+1):
+  actions = ["rock", "paper", "scissors"]
+  
+  random1=random.choice(actions)
+  random2=random.choice(actions)
+  print(random1)
+  print(random2)
+  if random1==random2:
+    print("Tie!")
+  elif random1=="rock" and random2=="paper":
+    print("2nd player won!")
+    score2+=1
+  elif random1=="rock" and random2=="scissors":
+    print("1st player won!")
+    score1+=1
+  elif random1=="paper" and random2=="scissors":
+    print("2nd player won!")
+    score2+=1
+  elif random1=="paper" and random2=="rock":
+    print("1st player won!")
+    score1+=1
+  elif random1=="scissors" and random2=="paper":
+    print("1st player won!")  
+    score1+=1
+  else:
+    print("2nd player won!")
+    score2+=1
+    i+=1
+print(score1)
+print(score2)
+if score1>score2:
+  print("1st player wins!")
+elif score1==score2:
+  print("Tie!")
+else:
+  print("2nd player wins!")
